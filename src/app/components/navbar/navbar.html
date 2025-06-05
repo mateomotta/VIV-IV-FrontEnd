@@ -8,7 +8,14 @@
       </div>
     </div>
 
-    <div class="right-section">
+    <!-- Hamburger Icon (visible only on mobile) -->
+    <div class="hamburger-menu" (click)="toggleMobileMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="right-section mobile-menu" [class.active]="mobileMenuOpen">
       @if (isLoggedIn) {
         <button class="nav-button" routerLink="/criar-evento">Criar Evento</button>
         <button class="nav-button" routerLink="/meus-eventos">Meus Eventos</button>
@@ -21,7 +28,7 @@
         </div>
       } @else {
         <div class="register-text">Cadastre-se para criar seu próprio evento</div>
-        <button class="login-button" (click)="toggleLogin()">Login/Cadastre-se</button> <!--routerLink="/login"-->
+        <button class="login-button" (click)="toggleLogin()">Login/Cadastre-se</button>
       }
     </div>
   </div>

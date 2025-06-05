@@ -138,3 +138,101 @@
   color: var(--cor-branco);
   font-weight: bold;
 }
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .logo-container {
+    /* Mantemos apenas o texto do logo visível */
+    display: flex;
+  }
+
+  /* Escondemos a imagem do logo mas mantemos o texto */
+  .logo-image {
+    display: none;
+  }
+
+  .logo-text {
+    align-items: flex-start; /* Alinha o texto à esquerda */
+    text-align: left;
+  }
+
+  .logo-main {
+    font-size: 1.5rem; /* Reduz um pouco o tamanho para mobile */
+  }
+
+  .right-section {
+    display: none;
+  }
+
+  .right-section.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Mudei para fixed para melhor experiência mobile */
+    top: 70px;
+    right: 20px;
+    background-color: var(--cor-azul-escuro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    gap: 15px;
+    width: 80%;
+    max-width: 300px;
+    align-items: flex-start;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: auto; /* Empurra o hamburguer para a direita */
+  }
+
+  /* Restante do CSS permanece igual */
+  .hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--cor-branco);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-menu .nav-button, 
+  .mobile-menu .login-button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .mobile-menu .register-text {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .mobile-menu .user-avatar {
+    margin-top: 10px;
+  }
+}
+
+/* Desktop Styles - Hide hamburger */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none;
+  }
+}
