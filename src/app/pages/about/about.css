@@ -1,0 +1,18 @@
+.about-container {
+  padding: 20px;
+  font-family: 'Montserrat', sans-serif;
+  color: #374B53;
+  max-width: 800px;
+  margin: 40px auto;
+}
+
+h1 {
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+  margin-bottom: 15px;
+}
