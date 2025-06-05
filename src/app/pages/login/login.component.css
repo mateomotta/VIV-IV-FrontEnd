@@ -98,7 +98,7 @@ button[disabled] {
 
 .login-right {
   flex: 1;
-  background: #42575f;
+  background: #374b53;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -108,7 +108,7 @@ button[disabled] {
 }
 
 .logo {
-  width: 220px;
+  width: 400px;
   margin-bottom: 1.5rem;
 }
 
