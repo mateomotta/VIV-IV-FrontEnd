@@ -19,11 +19,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/app/images",
-                "output": "assets/images"
               }
             ],
             "styles": [
@@ -77,11 +72,6 @@
               {
                 "glob": "**/*",
                 "input": "public"
-              },
-              {
-                "glob": "**/*",
-                "input": "src/app/images",
-                "output": "assets/images"
               }
             ],
             "styles": [
