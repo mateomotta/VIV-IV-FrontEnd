@@ -1,0 +1,35 @@
+<div class="cadastro-container">
+  <div class="cadastro-left">
+    <img src="assets/logo-joinville.png" alt="Joinville Inova Conectada" class="logo" />
+  </div>
+  <div class="cadastro-right">
+    <h2>Crie sua conta</h2>
+    <p class="subtitle">Preencha seus dados</p>
+    <form [formGroup]="cadastroForm" (ngSubmit)="cadastrarUsuario()">
+      <div class="form-group">
+        <label for="nome">Nome</label>
+        <input id="nome" type="text" formControlName="nome" />
+        <div class="error" *ngIf="nome?.invalid && (nome?.dirty || nome?.touched)">
+          <small *ngIf="nome?.errors?.['required']">Nome é obrigatório.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" formControlName="email" />
+        <div class="error" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <small *ngIf="email?.errors?.['required']">Email é obrigatório.</small>
+          <small *ngIf="email?.errors?.['email']">Email inválido.</small>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Senha</label>
+        <input id="password" type="password" formControlName="password" />
+        <div class="error" *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+          <small *ngIf="password?.errors?.['required']">Senha é obrigatória.</small>
+          <small *ngIf="password?.errors?.['minlength']">Mínimo 6 caracteres.</small>
+        </div>
+      </div>
+      <button type="submit" [disabled]="cadastroForm.invalid">Cadastrar</button>
+    </form>
+  </div>
+</div>
