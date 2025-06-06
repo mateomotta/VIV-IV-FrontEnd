@@ -1,1 +1,110 @@
-<p>help works!</p>
+<div class="help-container">
+  <!-- Banner with overlay title -->
+  <div class="banner-container">
+    <img src="assets/images/banner_institutionalpages.png" alt="Banner Joinville Inova Conectada" class="banner-image">
+    <h1 class="banner-title">AJUDA</h1>
+  </div>
+  
+  <!-- Main title below banner -->
+  <h2 class="main-title">PERGUNTAS FREQUENTES</h2>
+  
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <div class="faq-intro">
+      <p>Encontre respostas para as dúvidas mais comuns sobre a plataforma Joinville Inova Conectada. Se não encontrar o que procura, <a routerLink="/contato" class="text-link">entre em contato conosco</a>.</p>
+    </div>
+    
+    <div class="accordion">
+      <!-- FAQ Item 1 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Como me cadastro na plataforma?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>O cadastro é simples! Basta clicar no botão "Cadastre-se" no canto superior direito da página inicial e preencher o formulário com seus dados. Você receberá um e-mail de confirmação para ativar sua conta.</p>
+          <p><a routerLink="/cadastro" class="action-link" (click)="navigateTo('/cadastro')">Ir para página de cadastro →</a></p>
+        </div>
+      </div>
+      
+      <!-- FAQ Item 2 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Quem pode usar a plataforma?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>A plataforma é aberta para todos os interessados no ecossistema de inovação de Joinville: empreendedores, startups, investidores, pesquisadores, estudantes e cidadãos. Algumas funcionalidades podem ter restrições específicas.</p>
+          <p><a routerLink="/sobre" class="action-link" (click)="navigateTo('/sobre')">Saiba mais sobre o projeto →</a></p>
+        </div>
+      </div>
+      
+      <!-- FAQ Item 3 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Como posso encontrar parceiros para meu projeto?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Na seção "Conectar" você pode buscar perfis por área de atuação, habilidades ou interesses. Também recomendamos participar dos eventos listados na plataforma para networking presencial.</p>
+          <p><a routerLink="/perfis" class="action-link" (click)="navigateTo('/perfis')">Explorar perfis disponíveis →</a></p>
+        </div>
+      </div>
+      
+      <!-- FAQ Item 4 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Como funcionam os eventos na plataforma?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Na aba "Eventos" você encontra toda a programação. Alguns são gratuitos, outros podem ter custo. É possível filtrar por data, tipo de evento ou público-alvo. A inscrição é feita diretamente na plataforma.</p>
+          <p><a routerLink="/eventos" class="action-link" (click)="navigateTo('/eventos')">Ver eventos disponíveis →</a></p>
+        </div>
+      </div>
+      
+      <!-- FAQ Item 5 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Esqueci minha senha, como recuperar?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Na página de login, clique em "Esqueci minha senha". Você receberá um e-mail com um link para redefinir sua senha. Caso não receba, verifique sua pasta de spam ou entre em contato com nosso suporte.</p>
+          <p><a routerLink="/esqueci-senha" class="action-link" (click)="navigateTo('/esqueci-senha')">Redefinir minha senha →</a></p>
+        </div>
+      </div>
+      
+      <!-- FAQ Item 6 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Como usar o mapa de inovação?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Nosso mapa interativo mostra todos os atores do ecossistema de inovação de Joinville. Você pode filtrar por tipo (startups, investidores, universidades) e visualizar informações detalhadas de cada ponto.</p>
+          <p><a routerLink="/mapa" class="action-link" (click)="navigateTo('/mapa')">Acessar o mapa →</a></p>
+        </div>
+      </div>
+      
+      <!-- FAQ Item 7 -->
+      <div class="accordion-item">
+        <button class="accordion-header">
+          <span>Como adicionar meu perfil ou evento?</span>
+          <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="accordion-content">
+          <p>Após fazer login, acesse seu dashboard e clique em "Adicionar Perfil" ou "Criar Evento". Preencha as informações necessárias e aguarde a aprovação da nossa equipe de moderação.</p>
+          <p><a routerLink="/dashboard" class="action-link" (click)="navigateTo('/dashboard')">Acessar dashboard →</a></p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Contact Section -->
+    <div class="contact-section">
+      <h3>Ainda precisa de ajuda?</h3>
+      <p>Entre em contato com nossa equipe pelo <a routerLink="/contato" class="text-link">formulário de contato</a> ou pelo telefone <strong>(47) 3422-0000</strong>.</p>
+      <button routerLink="/contato" class="contact-button" (click)="navigateTo('/contato')">Fale Conosco</button>
+    </div>
+  </div>
+</div>
