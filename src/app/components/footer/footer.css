@@ -4,12 +4,133 @@
   text-align: center;
   padding: 15px 0;
   font-family: 'Montserrat', sans-serif;
-  position: fixed;
   width: 100%;
   bottom: 0;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+    justify-content: center; /* novo */
+  text-align: left;         /* novo */
+
+}
+
+.footer-logo {
+  max-height: 60px;
+}
+
+.footer-text {
+  font-size: 14px;
+  line-height: 1.2;
+  margin: 0;
+  color: white;
+  font-weight: 500;
+  height: 60px;               /* mesma altura da logo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.footer-left,
+.footer-center,
+.footer-right {
+  flex: 1;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.footer-center a {
+  margin: 0 10px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.footer-center a:hover {
+  text-decoration: underline;
+}
+
+.social-icons a {
+  margin: 0 5px;
+  color: white;
+  font-size: 16px;
+}
+
+.footer-right p {
+  margin: 0 0 5px 0;
+  font-size: 14px;
+}
+
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    padding: 10px 15px;
+    gap: 10px;
+  }
+
+  .footer-left {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    gap: 10px;
+  }
+
+  .footer-logo {
+    max-height: 40px;
+  }
+
+  .footer-text {
+    font-size: 12px;
+    line-height: 1.1;
+    height: auto;
+    margin: 0;
+  }
+
+  .footer-center {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .footer-center a {
+    font-size: 12px;
+    margin: 0 5px;
+  }
+
+  .footer-right {
+    padding-top: 5px;
+  }
+
+  .footer-right p {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .social-icons a {
+    font-size: 14px;
+    margin: 0 4px;
+  }
+
+  .footer p:last-child {
+    font-size: 12px;
+    margin-top: 8px;
+  }
+
+  hr {
+    margin: 5px auto;
+  }
 }
