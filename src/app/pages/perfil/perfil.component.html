@@ -1,0 +1,37 @@
+<div class="perfil-bg">
+  <div class="perfil-card">
+    <h2 class="perfil-title">Perfil de Usuário</h2>
+    <p class="perfil-subtitle">Edite e atualize seu perfil.</p>
+    <form [formGroup]="perfilForm" (ngSubmit)="salvarPerfil()">
+      <div class="perfil-row">
+        <div class="perfil-col">
+          <div class="form-group">
+            <label for="nome">Nome</label>
+            <input id="nome" type="text" formControlName="nome" />
+          </div>
+          <div class="form-group">
+            <label for="senha">Senha</label>
+            <input id="senha" type="password" formControlName="senha" />
+            <span class="mudar-link" (click)="abrirAlterarSenha()">Mudar</span>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" type="email" formControlName="email" />
+            <span class="mudar-link" (click)="abrirAlterarEmail()">Mudar</span>
+          </div>
+        </div>
+        <div class="perfil-col foto-col">
+          <div class="foto-perfil">
+            <img *ngIf="fotoUrl" [src]="fotoUrl" alt="Foto de perfil" />
+            <div *ngIf="!fotoUrl" class="foto-placeholder"></div>
+          </div>
+          <button type="button" class="btn-alterar-foto" (click)="alterarFoto()">ALTERAR</button>
+        </div>
+      </div>
+      <div class="deletar-conta">
+        <span>Deletar conta</span>
+        <small>Atenção! Essa é uma opção permanente e não pode ser desfeita.</small>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,6 +1,10 @@
 .esqueci-container {
   display: flex;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: url('/assets/bg-cadastro.jpg') no-repeat center center fixed;
+  background-size: cover;
 }
 
 .esqueci-left {
@@ -9,32 +13,38 @@
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border-radius: 16px 0 0 16px;
+  height: 460px;
+  min-width: 320px;
+  max-width: 400px;
   padding: 40px 20px;
 }
 
 .esqueci-right {
-  flex: 1;
+  flex: 1.2;
   background: #fff;
-  color: #222;
+  border-radius: 0 16px 16px 0;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  padding: 40px 20px;
-  border-radius: 0 16px 16px 0;
+  justify-content: center;
+  height: 460px;
+  min-width: 350px;
+  max-width: 480px;
+  padding: 40px 32px;
 }
 
 .logo {
-  width: 400px;
-  margin-bottom: 1.5rem;
+  width: 300px;
+  margin-bottom: 2rem;
 }
 
 .esqueci-right h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
   font-weight: 400;
+  margin-bottom: 0.5rem;
 }
 
 .subtitle {
@@ -45,7 +55,7 @@
 
 form {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
 }
 
 .form-group {
