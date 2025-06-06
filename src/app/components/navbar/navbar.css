@@ -1,0 +1,242 @@
+/* navbar.css - Versão com variáveis globais */
+
+.navbar {
+  background-color: var(--cor-azul-escuro);
+  padding: 10px 0px;
+  color: var(--cor-branco);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Estilos do logo */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
+}
+
+.logo-image {
+  width: auto;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  justify-content: center;
+  transition: transform 0.2s ease; /* Transição para o texto */
+}
+
+.logo-container:hover .logo-text {
+  transform: scale(1.03); /* Efeito sutil no texto */
+}
+
+.logo-image img {
+  max-height: 100%;
+  width: auto;
+}
+
+.logo-main {
+  font-size: 1.5rem; /* Reduzido para caber melhor */
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--cor-branco);
+}
+
+.logo-sub {
+  font-size: 0.7rem; /* Reduzido para caber melhor */
+  font-weight: 400;
+  opacity: 0.9;
+  color: var(--cor-branco);
+}
+
+/* Seção direita */
+.right-section {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Botões */
+.nav-button {
+  background-color: transparent;
+  color: var(--cor-branco);
+  border: 2px solid var(--cor-branco);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: var(--cor-branco);
+  color: var(--cor-azul-escuro);
+}
+
+.login-button {
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--cor-cinza-azulado);
+}
+
+.register-text {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin-right: 15px;
+  color: var(--cor-branco);
+}
+
+/* Avatar do usuário */
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--cor-cinza-claro);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.user-avatar:hover {
+  transform: scale(1.1);
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--cor-verde);
+  color: var(--cor-branco);
+  font-weight: bold;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .logo-container {
+    gap: 8px;
+  }
+
+  .logo-image {
+    height: 35px; /* Um pouco menor no mobile */
+  }
+
+  .logo-main {
+    font-size: 1.2rem;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
+  }
+
+  .right-section {
+    display: none;
+  }
+
+  .right-section.mobile-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: fixed; /* Mudei para fixed para melhor experiência mobile */
+    top: 70px;
+    right: 20px;
+    background-color: var(--cor-azul-escuro);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    gap: 15px;
+    width: 80%;
+    max-width: 300px;
+    align-items: flex-start;
+  }
+
+  .hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    margin-left: auto; /* Empurra o hamburguer para a direita */
+  }
+
+  /* Restante do CSS permanece igual */
+  .hamburger-menu .bar {
+    height: 3px;
+    width: 100%;
+    background-color: var(--cor-branco);
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger-menu.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-menu.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-menu.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .mobile-menu .nav-button, 
+  .mobile-menu .login-button {
+    width: 100%;
+    text-align: left;
+    padding: 10px 15px;
+    border-radius: 5px;
+  }
+
+  .mobile-menu .register-text {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .mobile-menu .user-avatar {
+    margin-top: 10px;
+  }
+}
+
+/* Desktop Styles - Hide hamburger */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none;
+  }
+}

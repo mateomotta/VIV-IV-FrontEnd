@@ -1,0 +1,37 @@
+<nav class="navbar">
+  <div class="container">
+    <div routerLink="/home" class="logo-container">
+      <div class="logo-image">
+        <img src="assets/images/logo_inova.png" alt="Logo Joinville Inova Conectada">
+      </div>
+      <div class="logo-text">
+        <div class="logo-main">JOINVILLE</div>
+        <div class="logo-sub">INOVA CONECTADA</div>
+      </div>
+    </div>
+
+    <!-- Hamburger Icon (visible only on mobile) -->
+    <div class="hamburger-menu" (click)="toggleMobileMenu()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="right-section mobile-menu" [class.active]="mobileMenuOpen">
+      @if (isLoggedIn) {
+        <button class="nav-button" routerLink="/criar-evento">Criar Evento</button>
+        <button class="nav-button" routerLink="/meus-eventos">Meus Eventos</button>
+        <div class="user-avatar" (click)="toggleLogin()">
+          @if (hasAvatar) {
+            <img src="assets/images/user-avatar.png" alt="Usuário">
+          } @else {
+            <div class="avatar-placeholder">{{ userInitials }}</div>
+          }
+        </div>
+      } @else {
+        <div class="register-text">Cadastre-se para criar seu próprio evento</div>
+        <button class="login-button" (click)="toggleLogin()">Login/Cadastre-se</button>
+      }
+    </div>
+  </div>
+</nav>
