@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '', redirectTo: '', pathMatch: 'full' },
+  { path: '', loadComponent: () => import('./pages/home/home').then(m => m.HomeComponent) },
   { path: 'ajuda', loadComponent: () => import('./pages/help/help').then(m => m.HelpComponent) },
   { path: 'sobre', loadComponent: () => import('./pages/about/about').then(m => m.AboutComponent) },
   { path: 'contato', loadComponent: () => import('./pages/contact/contact').then(m => m.ContactComponent) },
