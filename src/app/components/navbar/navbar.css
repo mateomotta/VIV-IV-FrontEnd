@@ -20,20 +20,21 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.logo-container:hover {
+  transform: scale(1.05);
 }
 
 .logo-image {
-  width: 50px;
-  height: 50px;
-  background-color: var(--cor-verde);
-  border-radius: 8px;
+  width: auto;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--cor-branco);
-  font-weight: bold;
-  font-size: 20px;
 }
 
 .logo-text {
@@ -41,23 +42,29 @@
   flex-direction: column;
   line-height: 1;
   justify-content: center;
-  align-items: center;
-  text-align: center;
+  transition: transform 0.2s ease; /* Transição para o texto */
+}
+
+.logo-container:hover .logo-text {
+  transform: scale(1.03); /* Efeito sutil no texto */
+}
+
+.logo-image img {
+  max-height: 100%;
+  width: auto;
 }
 
 .logo-main {
-  font-size: 1.8rem;
+  font-size: 1.5rem; /* Reduzido para caber melhor */
   font-weight: 700;
   letter-spacing: 1px;
-  width: 100%;
   color: var(--cor-branco);
 }
 
 .logo-sub {
-  font-size: 0.8rem;
+  font-size: 0.7rem; /* Reduzido para caber melhor */
   font-weight: 400;
   opacity: 0.9;
-  width: 100%;
   color: var(--cor-branco);
 }
 
@@ -142,22 +149,19 @@
 /* Mobile Styles */
 @media (max-width: 768px) {
   .logo-container {
-    /* Mantemos apenas o texto do logo visível */
-    display: flex;
+    gap: 8px;
   }
 
-  /* Escondemos a imagem do logo mas mantemos o texto */
   .logo-image {
-    display: none;
-  }
-
-  .logo-text {
-    align-items: flex-start; /* Alinha o texto à esquerda */
-    text-align: left;
+    height: 35px; /* Um pouco menor no mobile */
   }
 
   .logo-main {
-    font-size: 1.5rem; /* Reduz um pouco o tamanho para mobile */
+    font-size: 1.2rem;
+  }
+
+  .logo-sub {
+    font-size: 0.6rem;
   }
 
   .right-section {
