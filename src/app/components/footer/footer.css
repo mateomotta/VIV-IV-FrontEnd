@@ -20,9 +20,14 @@
   display: flex;
   align-items: center;
   gap: 10px;
-    justify-content: center; /* novo */
-  text-align: left;         /* novo */
+  justify-content: center; 
+  text-align: left;
+  text-decoration: none;
+}
 
+.footer-left:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease;
 }
 
 .footer-logo {
@@ -35,11 +40,16 @@
   margin: 0;
   color: white;
   font-weight: 500;
-  height: 60px;               /* mesma altura da logo */
+  height: 60px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   text-align: left;
+}
+
+.footer-text:hover {
+  color: #3498db;
+  transition: color 0.3s ease;
 }
 
 .footer-left,
@@ -59,13 +69,21 @@
 }
 
 .footer-center a:hover {
-  text-decoration: underline;
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .social-icons a {
   margin: 0 5px;
   color: white;
   font-size: 16px;
+}
+
+.social-icons a:hover {
+  color: #3498db;
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 .footer-right p {

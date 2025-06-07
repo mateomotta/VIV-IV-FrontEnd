@@ -235,6 +235,7 @@
   color: #555;
   text-decoration: none;
   transition: color 0.3s ease;
+  word-break: break-all;
 }
 
 .email-link:hover {
