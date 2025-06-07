@@ -1,0 +1,23 @@
+<div class="esqueci-container">
+  <div class="esqueci-left">
+    <img src="assets/images/logo_inova.png" alt="Joinville Inova Conectada" class="logo" />
+  </div>
+  <div class="esqueci-right">
+    <h2>Esqueceu sua senha?</h2>
+    <p class="subtitle">Informe seu e-mail para redefinir a senha</p>
+    <form [formGroup]="esqueciSenhaForm" (ngSubmit)="enviarEmail()">
+      <div class="form-group">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" formControlName="email" />
+        <div class="error" *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+          <small *ngIf="email?.errors?.['required']">Email é obrigatório.</small>
+          <small *ngIf="email?.errors?.['email']">Email inválido.</small>
+        </div>
+      </div>
+      <button type="submit" [disabled]="esqueciSenhaForm.invalid">Enviar</button>
+      <div class="back-link">
+        <a routerLink="/login">Voltar ao login</a>
+      </div>
+    </form>
+  </div>
+</div>

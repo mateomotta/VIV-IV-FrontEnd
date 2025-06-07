@@ -1,4 +1,5 @@
 import { Component, HostListener, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +13,8 @@ export class NavbarComponent implements OnDestroy {
   hasAvatar = false;
   mobileMenuOpen: boolean = false;
   userInitials = 'JD';
+
+  constructor(private router: Router) {}
 
   // Listener para cliques fora do menu
   @HostListener('document:click', ['$event'])
@@ -34,12 +37,8 @@ export class NavbarComponent implements OnDestroy {
   }
 
   toggleLogin() {
-    this.isLoggedIn = !this.isLoggedIn;
+    this.router.navigate(['/login']);
 
-    if (this.isLoggedIn) {
-      this.userInitials = 'US'; // Iniciais do usuário (pode ser dinâmico)
-    }
-    this.mobileMenuOpen = false;
   }
 
   toggleMobileMenu() {
