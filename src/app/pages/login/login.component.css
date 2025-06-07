@@ -1,27 +1,80 @@
 .login-container {
   display: flex;
   min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  position: relative;
+}
+
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/images/background-register.png') no-repeat center center;
+  background-size: cover;
+  transform: scale(1.05);
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.login-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
 }
 
 .login-left {
   flex: 1;
-  background: #fff;
+  background: #374b53;
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  border-radius: 16px 0 0 16px;
+  height: 460px;
+  min-width: 320px;
+  max-width: 400px;
   padding: 40px 20px;
 }
 
-.login-left h2 {
+.login-right {
+  flex: 1.2;
+  background: #fff;
+  border-radius: 0 16px 16px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 460px;
+  min-width: 350px;
+  max-width: 480px;
+  padding: 40px 32px;
+}
+
+.logo {
+  width: 300px;
+  margin-bottom: 1rem;
+}
+
+.login-right h2 {
   font-size: 2rem;
-  margin-bottom: 2rem;
   font-weight: 400;
+  margin-bottom: 1.5rem;
 }
 
 form {
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
 }
 
 .form-group {
@@ -53,7 +106,7 @@ input[type="password"] {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1.2rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .remember-me {
@@ -63,9 +116,8 @@ input[type="password"] {
 }
 
 .forgot-link {
-  color: #374b53;
+  color: #6d887d;
   text-decoration: none;
-  font-size: 0.95rem;
 }
 
 button[type="submit"] {
@@ -94,41 +146,4 @@ button[disabled] {
   color: #6d887d;
   text-decoration: none;
   margin-left: 0.3rem;
-}
-
-.login-right {
-  flex: 1;
-  background: #374b53;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 40px 20px;
-}
-
-.logo {
-  width: 400px;
-  margin-bottom: 1.5rem;
-}
-
-.login-right h1 {
-  font-size: 2.5rem;
-  margin: 0;
-  font-weight: 700;
-  letter-spacing: 2px;
-}
-
-.login-right h3 {
-  font-size: 1.2rem;
-  margin: 0.2rem 0 1.5rem 0;
-  font-weight: 400;
-  color: #b8e0d2;
-}
-
-.slogan {
-  margin-top: 2rem;
-  font-size: 1.1rem;
-  letter-spacing: 1px;
-  text-align: center;
 }

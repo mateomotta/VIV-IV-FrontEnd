@@ -1,5 +1,8 @@
 <div class="login-container">
   <div class="login-left">
+    <img src="assets/images/logo_inova.png" alt="Joinville Inova Conectada" class="logo" />
+  </div>
+  <div class="login-right">
     <h2>Faça seu login</h2>
     <form [formGroup]="loginForm" (ngSubmit)="entrar()">
       <div class="form-group">
@@ -28,8 +31,5 @@
         Não tem conta ainda? <a routerLink="/cadastro">Crie agora</a>
       </div>
     </form>
-  </div>
-  <div class="login-right">
-    <img src="assets/images/logo_inova.png" alt="Joinville Inova Conectada" class="logo" />
   </div>
 </div>
