@@ -5,6 +5,7 @@
   justify-content: center;
   background-size: cover;
   position: relative;
+  padding: 20px;
 }
 
 .esqueci-container::before {
@@ -32,51 +33,41 @@
   z-index: -1;
 }
 
-
 .esqueci-left {
-  flex: 1;
-  background: #374b53;
-  color: #fff;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px 0 0 16px;
-  height: 460px;
-  min-width: 320px;
-  max-width: 400px;
-  padding: 40px 20px;
+  display: none; /* Escondemos o lado esquerdo em mobile */
 }
 
 .esqueci-right {
-  flex: 1.2;
   background: #fff;
-  border-radius: 0 16px 16px 0;
+  border-radius: 16px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 460px;
-  min-width: 350px;
+  width: 100%;
   max-width: 480px;
-  padding: 40px 32px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
-  width: 300px;
-  margin-bottom: 2rem;
+  width: 200px;
+  margin-bottom: 1.5rem;
+  display: block; /* Mostramos o logo no mobile */
 }
 
 .esqueci-right h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 400;
   margin-bottom: 0.5rem;
+  text-align: center;
 }
 
 .subtitle {
-  font-size: 0.95rem;
-  color: #b8e0d2;
-  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  text-align: center;
 }
 
 form {
@@ -91,7 +82,7 @@ form {
 label {
   display: block;
   margin-bottom: 0.3rem;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
 input[type="email"] {
@@ -105,6 +96,7 @@ input[type="email"] {
 
 .error small {
   color: #d32f2f;
+  font-size: 0.8rem;
 }
 
 button[type="submit"] {
@@ -114,9 +106,9 @@ button[type="submit"] {
   color: #fff;
   border: none;
   border-radius: 5px;
-  font-size: 1.1rem;
+  font-size: 1rem;
   cursor: pointer;
-  margin-top: 1.2rem;
+  margin-top: 1rem;
 }
 
 button[disabled] {
@@ -132,4 +124,88 @@ button[disabled] {
 .back-link a {
   color: #6d887d;
   text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Media queries para tablets e desktops */
+@media (min-width: 768px) {
+  .esqueci-container {
+    padding: 0;
+  }
+  
+  .esqueci-left {
+    display: flex;
+    flex: 1;
+    background: #374b53;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px 0 0 16px;
+    height: 460px;
+    min-width: 320px;
+    max-width: 400px;
+    padding: 40px 20px;
+  }
+  
+  .esqueci-right {
+    flex: 1.2;
+    border-radius: 0 16px 16px 0;
+    height: 460px;
+    min-width: 350px;
+    max-width: 480px;
+    padding: 40px 32px;
+    box-shadow: none;
+  }
+  
+  .logo {
+    width: 300px;
+    margin-bottom: 2rem;
+  }
+  
+  .esqueci-right h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    color: #b8e0d2;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  button[type="submit"] {
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 400px) {
+  .esqueci-right {
+    padding: 25px 15px;
+  }
+  
+  .logo {
+    width: 180px;
+  }
+  
+  .esqueci-right h2 {
+    font-size: 1.3rem;
+  }
+  
+  .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  button[type="submit"] {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .back-link a {
+    font-size: 0.85rem;
+  }
 }
