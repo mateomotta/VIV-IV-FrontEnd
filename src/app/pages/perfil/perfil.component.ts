@@ -16,30 +16,71 @@ export class PerfilComponent {
   fotoUrl: string | null = null;
 
   constructor(private fb: FormBuilder) {
-    this.perfilForm = this.fb.group({
-      nome: ['', Validators.required],
-      senha: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]]
-    });
+this.perfilForm = this.fb.group({
+  nome: ['', Validators.required],
+  senha: ['', Validators.required],
+  email: ['', [Validators.required, Validators.email]]
+});
+
+this.perfilForm.get('senha')?.disable();
+this.perfilForm.get('email')?.disable();
   }
 
-  salvarPerfil() {
-    // Salvar lógica
-  }
+  originalData = {
+  nome: 'Nome Teste Mockup',
+  email: 'EmailTeste@gmail.com',
+  senha: '********'
+};
 
-  descartar() {
-    // Descartar alterações
-  }
+editandoSenha = false;
+editandoEmail = false;
 
-  alterarFoto() {
-    // Lógica para alterar foto
-  }
+ngOnInit() {
+  this.perfilForm.patchValue(this.originalData);
+}
 
-  abrirAlterarSenha() {
-    // Lógica para alterar senha
-  }
+abrirAlterarSenha() {
+  this.editandoSenha = true;
+  this.perfilForm.get('senha')?.enable();
+}
 
-  abrirAlterarEmail() {
-    // Lógica para alterar email
+abrirAlterarEmail() {
+  this.editandoEmail = true;
+  this.perfilForm.get('email')?.enable();
+}
+
+salvarPerfil() {
+  if (this.perfilForm.valid) {
+    this.originalData = this.perfilForm.value;
+    alert('Perfil salvo!');
+    this.editandoEmail = false;
+    this.editandoSenha = false;
+    this.perfilForm.get('email')?.disable();
+    this.perfilForm.get('senha')?.disable();
   }
+}
+
+descartar() {
+  this.perfilForm.patchValue(this.originalData);
+  this.editandoEmail = false;
+  this.editandoSenha = false;
+  this.perfilForm.get('email')?.disable();
+  this.perfilForm.get('senha')?.disable();
+}
+alterarFoto() {
+  const fileInput = document.createElement('input');
+  fileInput.type = 'file';
+  fileInput.accept = 'image/*';
+  fileInput.onchange = (event: any) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.fotoUrl = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+  fileInput.click();
+}
 }
