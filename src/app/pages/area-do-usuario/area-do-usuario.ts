@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./area-do-usuario.css']
 })
 export class AreaDoUsuario {
+  selectedTab: 'perfis' | 'eventos' | 'inscricoes' = 'perfis';
 
+  selectTab(tab: 'perfis' | 'eventos' | 'inscricoes') {
+    this.selectedTab = tab;
+  }
 }

@@ -239,8 +239,8 @@
 @media (min-width: 768px) {
   .hero-section {
     flex-direction: row;
-    padding: 60px;
-    margin-bottom: 80px;
+    padding: 50px;
+    height: 50px;
   }
   
   .hero-content {
@@ -312,4 +312,153 @@
 .featured-content {
   animation: fadeInUp 0.8s ease-out 0.4s forwards;
   opacity: 0;
+}
+
+/* Dashboard Styles */
+.dashboard-section {
+  margin-top: 40px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+}
+
+.dashboard-card {
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 5px 20px rgba(44, 62, 80, 0.07);
+  padding: 30px 25px;
+}
+
+.dashboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.dashboard-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 16px 18px;
+  transition: background 0.2s;
+}
+
+.dashboard-item:hover {
+  background: #e9ecef;
+}
+
+.dashboard-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.status {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 3px 12px;
+  border-radius: 12px;
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.status-ativo { background: #eafaf1; color: #27ae60; }
+.status-pendente { background: #fff9e6; color: #f39c12; }
+.status-cancelado { background: #fdecea; color: #e74c3c; }
+.status-inscrito { background: #e3f2fd; color: #2980b9; }
+
+.notification.unread {
+  border-left: 5px solid #3498db;
+  background: #eaf6fb;
+}
+
+.notification-date {
+  display: block;
+  font-size: 0.85em;
+  color: #888;
+  margin-top: 4px;
+}
+
+@media (min-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ...existing code... */
+
+/* Dashboard Flex Layout */
+.dashboard-flex {
+  display: flex;
+  gap: 32px;
+}
+
+/* Sidebar */
+.dashboard-sidebar {
+  min-width: 220px;
+  background: #f8f9fa;
+  border-radius: 14px;
+  box-shadow: 0 2px 10px rgba(44,62,80,0.04);
+  padding: 30px 0;
+  height: fit-content;
+}
+
+.dashboard-sidebar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.tab-item {
+  padding: 18px 32px;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-left: 4px solid transparent;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.tab-item.active,
+.tab-item:hover {
+  background: #e9ecef;
+  border-left: 4px solid #3498db;
+  color: #2980b9;
+  font-weight: 600;
+}
+
+/* Content Area */
+.dashboard-content {
+  flex: 1;
+  min-width: 0;
+}
+
+/* Tabs Content */
+.tab-content {
+  display: none;
+  animation: fadeInUp 0.5s;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+/* ...existing code... */
+
+@media (max-width: 900px) {
+  .dashboard-flex {
+    flex-direction: column;
+  }
+  .dashboard-sidebar {
+    width: 100%;
+    min-width: unset;
+    margin-bottom: 24px;
+  }
 }
