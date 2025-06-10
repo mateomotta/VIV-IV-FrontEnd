@@ -9,8 +9,9 @@ export const routes: Routes = [
   { path: 'login', loadComponent: () => import('./pages/login/login.component').then(m => m.Login) },
   { path: 'perfil', loadComponent: () => import('./pages/perfil/perfil.component').then(m => m.PerfilComponent) },
   { path: 'cadastro', loadComponent: () => import('./pages/cadastro/cadastro.component').then(m => m.Cadastro) },
-  { path: 'esqueci-senha', loadComponent: () => import('./pages/esqueci-senha/esqueci-senha.component').then(m => m.EsqueciSenha) },
-  { path: '**', loadComponent: () => import('./pages/notfoundpage/notfoundpage').then(m => m.NotfoundpageComponent), }
+  { path: 'esqueci-senha', loadComponent: () => import('./pages/esqueci-senha/esqueci-senha.component').then(m => m.EsqueciSenha)},
+  { path: 'area-do-usuario', loadComponent: () => import('./pages/area-do-usuario/area-do-usuario').then(m => m.AreaDoUsuario)},
+  { path: '**', loadComponent: () => import('./pages/notfoundpage/notfoundpage').then(m => m.NotfoundpageComponent)},
 ];
 
 @NgModule({
