@@ -462,3 +462,32 @@
     margin-bottom: 24px;
   }
 }
+
+.profile {
+  display: flex;
+  align-items: center;
+}
+
+.profile-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 16px;
+}
+
+.event {
+  flex: auto;
+  align-content: start;
+  justify-content: start;
+
+}
+
+.event-photo {
+  height: 80px;
+  display: block;
+  margin: -15px;
+  margin-right: 6px;
+  padding-right: 6px;
+  border-radius: 12px;
+}
