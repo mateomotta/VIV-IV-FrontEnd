@@ -1,0 +1,30 @@
+<main>
+  <div id="map"></div>
+
+  <div class="filtro-container">
+    <label for="tipoFiltro">Filtrar por tipo:</label>
+    <select id="tipoFiltro" [(ngModel)]="tipoFiltro" (change)="renderizarPontos()">
+      <option value="todos">Todos</option>
+      <option value="ator">Atores</option>
+      <option value="evento">Eventos</option>
+    </select>
+  </div>
+
+  <div class="form-container">
+    <h3>Adicionar Novo Ponto por Endereço</h3>
+
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" [(ngModel)]="novoPonto.nome" />
+
+    <label for="tipo">Tipo:</label>
+    <select id="tipo" [(ngModel)]="novoPonto.tipo">
+      <option value="ator">Ator</option>
+      <option value="evento">Evento</option>
+    </select>
+
+    <label for="endereco">Endereço:</label>
+    <input type="text" id="endereco" [(ngModel)]="novoPonto.endereco" placeholder="Ex: Rua Blumenau, Joinville" />
+
+    <button (click)="geocodificarEndereco()">Geocodificar e Adicionar</button>
+  </div>
+</main>
