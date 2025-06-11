@@ -1,0 +1,229 @@
+<style>
+.map-visualization {
+  position: relative;
+  flex: 1;
+  min-height: 500px; /* Altura mínima garantida */
+  height: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+#map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Garante que o container principal tenha altura suficiente */
+.map-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: calc(100vh - 200px); /* Ajuste conforme necessário */
+  min-height: 600px;
+}
+
+@media (min-width: 992px) {
+  .map-content {
+    flex-direction: row;
+    height: 70vh; /* Altura para desktop */
+  }
+  
+  .map-filters {
+    width: 300px;
+    flex-shrink: 0;
+    overflow-y: auto; /* Permite rolagem se o conteúdo for longo */
+  }
+}
+
+</style>
+
+<div class="map-container">
+  <!-- Header Section -->
+  <section class="map-header">
+    <h1 class="map-title">Mapa do Ecossistema de Inovação</h1>
+    <p class="map-description">Explore os atores e recursos de inovação em Joinville</p>
+  </section>
+
+  <!-- Main Map Content -->
+  <div class="map-content">
+    <!-- Filters Sidebar -->
+    <aside class="map-filters">
+      <div class="filters-header">
+        <h3>Filtros</h3>
+        <button class="clear-filters">Limpar</button>
+      </div>
+      
+      <div class="filter-group">
+        <h4 class="filter-title">Categorias</h4>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="startups">
+            <span class="checkmark"></span>
+            Startups
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="empresas">
+            <span class="checkmark"></span>
+            Empresas
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="universidades">
+            <span class="checkmark"></span>
+            Universidades
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="governo">
+            <span class="checkmark"></span>
+            Governo
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="eventos">
+            <span class="checkmark"></span>
+            Eventos
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4 class="filter-title">Áreas de Atuação</h4>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="tecnologia">
+            <span class="checkmark"></span>
+            Tecnologia
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="educacao">
+            <span class="checkmark"></span>
+            Educação
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="industria">
+            <span class="checkmark"></span>
+            Indústria
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="servicos">
+            <span class="checkmark"></span>
+            Serviços
+          </label>
+        </div>
+      </div>
+
+      <button class="add-point-button" id="addPointBtn">
+        <i class="fas fa-plus"></i> Adicionar Ponto
+      </button>
+    </aside>
+
+    <!-- Map Visualization -->
+    <div class="map-visualization">
+      <div id="map"></div>
+      <div class="map-legend">
+        <div class="legend-item"><span class="legend-color startup"></span> Startups</div>
+        <div class="legend-item"><span class="legend-color company"></span> Empresas</div>
+        <div class="legend-item"><span class="legend-color university"></span> Universidades</div>
+        <div class="legend-item"><span class="legend-color government"></span> Governo</div>
+        <div class="legend-item"><span class="legend-color event"></span> Eventos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Point Modal -->
+  <div class="modal" id="addPointModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Adicionar Novo Ponto</h3>
+      
+      <form id="addPointForm">
+        <div class="form-group">
+          <label for="pointName">Nome do Local/Organização</label>
+          <input type="text" id="pointName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pointCategory">Categoria</label>
+          <select id="pointCategory" required>
+            <option value="">Selecione...</option>
+            <option value="startup">Startup</option>
+            <option value="empresa">Empresa</option>
+            <option value="universidade">Universidade</option>
+            <option value="governo">Órgão Governamental</option>
+            <option value="evento">Evento</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pointAddress">Endereço</label>
+          <input type="text" id="pointAddress" required>
+          <button type="button" id="searchAddress">Buscar no Mapa</button>
+        </div>
+
+        <div class="form-group">
+          <label for="pointDescription">Descrição</label>
+          <textarea id="pointDescription" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="pointWebsite">Website</label>
+          <input type="url" id="pointWebsite">
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="cancel-button">Cancelar</button>
+          <button type="submit" class="submit-button">Adicionar Ponto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Aguarda um pequeno delay para garantir que todos os elementos estão renderizados
+  setTimeout(function() {
+    // Inicializa o mapa
+    var map = L.map('map', {
+      preferCanvas: true, // Melhora performance em alguns casos
+      renderer: L.canvas() // Usa renderização por canvas
+    }).setView([-26.3044, -48.8487], 13);
+    
+    // Usa OpenStreetMap como fallback (mais confiável que Mapbox sem token)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '© OpenStreetMap contributors',
+      noWrap: true,
+      detectRetina: true // Melhora qualidade em displays retina
+    }).addTo(map);
+    
+    // Correção mais robusta para redimensionamento
+    function handleResize() {
+      setTimeout(function() {
+        map.invalidateSize({
+          pan: false,
+          animate: false
+        });
+      }, 100);
+    }
+    
+    window.addEventListener('resize', handleResize);
+    
+    // Força uma atualização inicial
+    handleResize();
+    
+    // Adiciona controle de zoom
+    L.control.zoom({
+      position: 'topright'
+    }).addTo(map);
+    
+    // Debug: verifica dimensões do container
+    console.log('Dimensões do container #map:', 
+      document.getElementById('map').offsetWidth, 
+      document.getElementById('map').offsetHeight);
+  }, 50);
+});
+</script>
