@@ -1,0 +1,256 @@
+.container {
+  display: flex;
+  justify-content: center;
+
+  /* pegar a imagem de fundo */
+  /* background-image: url();
+  background-repeat: no-repeat;
+  background-size: cover; */
+
+  margin: 32px 0;
+  height: 100%;
+}
+
+.evento-container {
+  position: relative;
+  padding: 3em 2.5em;
+  max-width: 900px;
+  height: fit-content;
+  background-color: #eeeeee;
+  box-shadow: 12px 33px 44.2px -2px #12273078;
+}
+
+.evento-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2em 2em 2em;
+}
+
+.btn-voltar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1rem;
+  gap: 12px;
+  text-align: center;
+  position: absolute;
+  width: 130px;
+  height: 50px;
+  background-color: #6d887d;
+  border-radius: 1em;
+  color: var(--cor-branco);
+  border: none;
+  font-weight: 800;
+  font-family: "Montserrat", sans-serif;
+  left: -90px;
+  cursor: pointer;
+}
+
+.evento-title {
+  font-size: 2rem;
+  margin: 0;
+  font-weight: 800;
+}
+
+.evento-subtitle {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.inscrever-div {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.btn {
+  height: 40px;
+  width: 170px;
+  border-radius: 8px;
+  border: none;
+  background-color: #6d887d;
+  font-family: "Montserrat", sans-serif;
+  color: var(--cor-branco);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.content-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.content-div-text {
+  display: flex;
+  padding: 0 2em;
+  width: 60%;
+  flex-direction: column;
+  font-family: var(--fonte-secundaria);
+  font-weight: 300;
+}
+
+.evento-info-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2em;
+  width: 30%;
+}
+
+.categoria-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 1em 2em 1.5em 2em;
+  background-color: #d9d9d9;
+  border-radius: 12px;
+  font-family: var(--fonte-secundaria);
+}
+
+.categoria-div h4 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.categoria-div span {
+  background-color: var(--cor-cinza-azulado);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--cor-branco);
+  font-family: "Poppins" sans-serif;
+  font-size: 1.1rem;
+  width: 150px;
+  height: 40px;
+  font-weight: 500;
+  border-radius: 5px;
+}
+
+.categoria-div hr {
+  width: 100%;
+  margin: 2em 0;
+  border: solid var(--cor-cinza-azulado) 2px;
+}
+
+.data-hora-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  font-weight: 300;
+  justify-content: center;
+}
+
+.data-hora-div p {
+  margin: 0;
+}
+
+.extra-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1em;
+}
+
+.extra-div button {
+  background-color: #6d887d;
+  border: none;
+  color: var(--cor-branco);
+  padding: 16px 8px;
+  border-radius: 1em;
+  font-weight: 600;
+  width: 200px;
+  font-size: 1rem;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn-voltar:hover,
+.extra-div button:hover {
+  background-color: #5b756bbd;
+  transform: scale(1.03);
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* === Breakpoints para responsividade === */
+
+@media (max-width: 1145px) {
+  .btn-voltar {
+    left: -65px;
+  }
+}
+
+@media (max-width: 1128px) {
+  .btn-voltar {
+    position: relative;
+    left: 0;
+    margin-bottom: 1.5em;
+    align-self: center;
+  }
+
+  .evento-header {
+    flex-direction: column;
+    gap: 1em;
+    text-align: left;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .evento-container {
+    padding: 2em 1.5em;
+  }
+
+  .evento-header {
+    flex-direction: column;
+    gap: 2em;
+    text-align: center;
+  }
+
+  .content-div {
+    flex-direction: column;
+    align-items: center;
+    gap: 2em;
+  }
+
+  .content-div-text {
+    width: 100%;
+  }
+
+  .btn-voltar {
+    position: relative;
+    left: 0;
+    top: 0;
+    margin-bottom: 1em;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .evento-title {
+    font-size: 1.6rem;
+  }
+
+  .evento-subtitle {
+    font-size: 1rem;
+  }
+
+  .btn,
+  .btn-voltar,
+  .extra-div button {
+    width: 100%;
+  }
+
+  .categoria-div {
+    width: 50vw;
+  }
+
+  .categoria-div span {
+    width: 100%;
+  }
+}
