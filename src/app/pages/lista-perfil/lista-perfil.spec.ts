@@ -45,4 +45,3 @@ describe('ListaPerfilComponent', () => {
     component.carregarMais();
     expect(component.perfisFiltrados.length).toBeGreaterThan(quantidadeAntes);
   });
-});

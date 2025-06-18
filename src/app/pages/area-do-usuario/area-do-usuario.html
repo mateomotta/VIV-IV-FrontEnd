@@ -1,0 +1,123 @@
+<div class="home-container">
+  <section class="dashboard-section dashboard-flex">
+    <!-- Sidebar Tabs -->
+    <nav class="dashboard-sidebar">
+      <ul>
+        <li 
+            class="tab-item" 
+            [class.active]="selectedTab === 'perfis'" 
+            (click)="selectTab('perfis')"
+            data-tab="perfis">
+            <i class="fas fa-user"></i> Perfis
+        </li>
+
+        <li 
+            class="tab-item" 
+            [class.active]="selectedTab === 'eventos'" 
+            (click)="selectTab('eventos')"
+            data-tab="eventos">
+            <i class="fas fa-calendar-alt"></i> Eventos
+        </li>
+
+        <li 
+            class="tab-item" 
+            [class.active]="selectedTab === 'inscricoes'" 
+            (click)="selectTab('inscricoes')"
+            data-tab="inscricoes">
+            <i class="fas fa-clipboard-list"></i> Inscrições
+        </li>
+        
+      </ul>
+    </nav>
+
+    <!-- Tab Content -->
+    <div class="dashboard-content">
+      <!-- Perfis -->
+      <div class="tab-content tab-perfis active" [class.active]="selectedTab === 'perfis'">
+        <h2 class="section-title">Meus Perfis</h2>
+        <div class="dashboard-list">
+          <div class="dashboard-item">
+            <div class="profile">
+              <img src="assets/images/homesection1.jpg" alt="Foto de Perfil" class="profile-photo">
+              <strong>Perfil: João Silva</strong>
+              <span class="status status-ativo">Ativo</span>
+            </div>
+            <div class="dashboard-actions">
+              <button class="secondary-button"><i class="fas fa-edit"></i> Editar</button>
+              <button class="secondary-button"><i class="fas fa-trash"></i> Excluir</button>
+            </div>
+          </div>
+          <div class="dashboard-item">
+            <div class="profile">
+              <img src="assets/images/logo_inova.png" alt="Foto de Perfil" class="profile-photo">
+              <strong>Perfil: Startup XYZ</strong>
+              <span class="status status-pendente">Pendente</span>
+            </div>
+            <div class="dashboard-actions">
+              <button class="secondary-button"><i class="fas fa-edit"></i> Editar</button>
+              <button class="secondary-button"><i class="fas fa-trash"></i> Excluir</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Eventos -->
+      <div class="tab-content tab-eventos" [class.active]="selectedTab === 'eventos'">
+        <h2 class="section-title">Meus Eventos</h2>
+        <div class="dashboard-list">
+          <div class="dashboard-item">
+            <img src="assets/images/homesection2.jpg" alt="Evento" class="event-photo">  
+            <div class="event">
+              <strong>Evento: Meetup Inovação</strong>
+              <span class="status status-ativo">Publicado</span>
+            </div> 
+            <div class="dashboard-actions">
+              <button class="secondary-button"><i class="fas fa-edit"></i> Editar</button>
+              <button class="secondary-button"><i class="fas fa-times"></i> Cancelar</button>
+            </div>
+          </div>
+          <div class="dashboard-item">
+            <img src="assets/images/homesection1.jpg" alt="Evento" class="event-photo">  
+            <div class="event">
+              <strong>Evento: Hackathon 2025</strong>
+              <span class="status status-cancelado">Cancelado</span>
+            </div>
+            <div class="dashboard-actions">
+              <button class="secondary-button" disabled><i class="fas fa-edit"></i> Editar</button>
+              <button class="secondary-button" disabled><i class="fas fa-times"></i> Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Inscrições -->
+      <div class="tab-content tab-inscricoes" [class.active]="selectedTab === 'inscricoes'">
+        <h2 class="section-title">Minhas Inscrições</h2>
+        <div class="dashboard-list">
+          <div class="dashboard-item">
+            <img src="assets/images/homesection2.jpg" alt="Evento" class="event-photo">  
+            <div class="event">
+              <strong>Evento: Meetup Inovação</strong>
+              <span class="status status-inscrito">Inscrito</span>
+            </div>
+            <div class="dashboard-actions">
+              <button class="secondary-button"><i class="fas fa-eye"></i> Visualizar</button>
+              <button class="secondary-button"><i class="fas fa-times"></i> Cancelar</button>
+            </div>
+          </div>
+          <div class="dashboard-item">
+            <img src="assets/images/banner_institutionalpages.png" alt="Evento" class="event-photo">  
+            <div class="event">
+              <strong>Evento: Workshop Startups</strong>
+              <span class="status status-inscrito">Inscrito</span>
+            </div>
+            <div class="dashboard-actions">
+              <button class="secondary-button"><i class="fas fa-eye"></i> Visualizar</button>
+              <button class="secondary-button"><i class="fas fa-times"></i> Cancelar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
