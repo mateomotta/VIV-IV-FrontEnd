@@ -10,7 +10,8 @@ export const routes: Routes = [
   { path: 'perfil', loadComponent: () => import('./pages/perfil/perfil.component').then(m => m.PerfilComponent) },
   { path: 'cadastro', loadComponent: () => import('./pages/cadastro/cadastro.component').then(m => m.Cadastro) },
   { path: 'esqueci-senha', loadComponent: () => import('./pages/esqueci-senha/esqueci-senha.component').then(m => m.EsqueciSenha) },
-  { path: '**', loadComponent: () => import('./pages/notfoundpage/notfoundpage').then(m => m.NotfoundpageComponent), }
+  { path: '**', loadComponent: () => import('./pages/notfoundpage/notfoundpage').then(m => m.NotfoundpageComponent) },
+  { path: 'lista-perfil', loadComponent: () => import('./pages/lista-perfil/lista-perfil').then(m => m.ListaPerfilComponent) }
 ];
 
 @NgModule({
