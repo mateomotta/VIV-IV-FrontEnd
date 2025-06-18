@@ -1,0 +1,75 @@
+<div class="container">
+  <section class="evento-container">
+    <div class="evento-header">
+      <button class="btn-voltar" (click)="voltar()">
+        <i class="fa-solid fa-arrow-left"></i>
+        VOLTAR
+      </button>
+      <div>
+        <h1 class="evento-title">NOME DO EVENTO</h1>
+        <span class="evento-subtitle">Empresa</span>
+      </div>
+      <div class="inscrever-div">
+        <button class="btn">Inscrever-se</button>
+        <i
+          class="fa-heart fa-xl"
+          [class.fa-regular]="!curtido"
+          [class.fa-solid]="curtido"
+          [style.color]="curtido ? 'red' : 'inherit'"
+          (click)="toggleCurtida()"
+          style="cursor: pointer"
+        ></i>
+      </div>
+    </div>
+
+    <div class="content-div">
+      <div class="content-div-text">
+        <p>
+          um evento dedicado à inovação e tecnologia, reunindo empresas,
+          profissionais e entusiastas do setor em um ambiente dinâmico e
+          interativo. Com palestras inspiradoras, workshops práticos e
+          oportunidades de networking, o evento visa fomentar o conhecimento e
+          impulsionar novos projetos.
+        </p>
+        <p>
+          um evento dedicado à inovação e tecnologia, reunindo empresas,
+          profissionais e entusiastas do setor em um ambiente dinâmico e
+          interativo. Com palestras inspiradoras, workshops práticos e
+          oportunidades de networking, o evento visa fomentar o conhecimento e
+          impulsionar novos projetos
+        </p>
+
+        <h3>Destaques do evento:</h3>
+        <ul>
+          <li>Painéis com especialistas e líderes do setor</li>
+          <li>Workshops sobre as últimas tendências tecnológicas</li>
+          <li>Área de exposição com startups e empresas inovadoras</li>
+          <li>Espaços para networking e troca de experiências</li>
+        </ul>
+      </div>
+
+      <aside class="evento-info-side">
+        <div class="categoria-div">
+          <h4>Categoria</h4>
+          <span>Palestra</span>
+          <span>Produção</span>
+          <hr />
+          <div class="data-hora-div">
+            <p>20/10/2025</p>
+            <p>Segunda-Feira</p>
+            <p>às 15 horas</p>
+          </div>
+        </div>
+
+        <div class="extra-div">
+          <img
+            src="/assets/images/lampadas-inova-conectada.png"
+            alt="Lâmpadas"
+            width="100px"
+          />
+          <button>COMPARTILHAR</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+</div>
