@@ -1,0 +1,118 @@
+/* Container principal */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  /* Títulos das seções */
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Estatísticas (usando o grid da Home) */
+  .stats-section .quick-links-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  
+  .quick-link-card {
+    background-color: #f0f4f8;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .quick-link-card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Aprovação de perfis/eventos */
+  .approval-section .featured-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+  }
+  
+  .featured-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  
+  .featured-card h3 {
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  
+  textarea {
+    width: 100%;
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    resize: vertical;
+  }
+  
+  /* Botões herdados do estilo da Home */
+  .hero-buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .primary-button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .secondary-button {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .primary-button:hover,
+  .secondary-button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Tabela de usuários */
+  .user-management-section {
+    margin-top: 40px;
+  }
+  
+  .user-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .user-table th,
+  .user-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .user-table th {
+    background-color: #f8f9fa;
+  }
+  
+  .user-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  
