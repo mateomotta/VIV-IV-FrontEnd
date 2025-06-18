@@ -1,0 +1,27 @@
+<!-- lista-perfil.html -->
+<div class="lista-perfil-container">
+  <div class="filtros">
+    <input type="text" placeholder="Buscar por palavra-chave" [(ngModel)]="filtro.palavraChave" (input)="filtrarPerfis()" />
+    <select [(ngModel)]="filtro.tipo" (change)="filtrarPerfis()">
+      <option value="">Todos os Tipos</option>
+      <option value="startup">Startup</option>
+      <option value="empresa">Empresa</option>
+      <option value="universidade">Universidade</option>
+    </select>
+    <select [(ngModel)]="filtro.area" (change)="filtrarPerfis()">
+      <option value="">Todas as Áreas</option>
+      <option value="tecnologia">Tecnologia</option>
+      <option value="educacao">Educação</option>
+    </select>
+  </div>
+
+  <div class="lista-perfil-grid">
+    <div *ngFor="let perfil of perfisFiltrados" class="lista-perfil-card">
+      <img [src]="perfil.imagem" [alt]="perfil.nome">
+      <h3>{{ perfil.nome }}</h3>
+      <p>{{ perfil.descricao }}</p>
+    </div>
+  </div>
+
+  <button *ngIf="temMaisPerfis" (click)="carregarMais()" class="carregar-mais">Carregar mais</button>
+</div>
