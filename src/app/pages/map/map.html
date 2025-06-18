@@ -1,0 +1,142 @@
+<div class="map-container">
+  <button class="filter-toggle" id="filterToggle">
+  <i class="fas fa-filter"></i>
+  </button>
+  <!-- Header Section -->
+  <section class="map-header">
+    <h1 class="map-title">Mapa do Ecossistema de Inovação</h1>
+    <p class="map-description">Explore os atores e recursos de inovação em Joinville</p>
+  </section>
+
+  <!-- Main Map Content -->
+  <div class="map-content">
+    <!-- Filters Sidebar -->
+    <aside class="map-filters">
+      <div class="filters-header">
+        <h3>Filtros</h3>
+        <button class="clear-filters">Limpar</button>
+      </div>
+      
+      <div class="filter-group">
+        <h4 class="filter-title">Categorias</h4>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="startups">
+            <span class="checkmark"></span>
+            Startups
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="empresas">
+            <span class="checkmark"></span>
+            Empresas
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="universidades">
+            <span class="checkmark"></span>
+            Universidades
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="governo">
+            <span class="checkmark"></span>
+            Governo
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-category="eventos">
+            <span class="checkmark"></span>
+            Eventos
+          </label>
+        </div>
+      </div>
+
+      <div class="filter-group">
+        <h4 class="filter-title">Áreas de Atuação</h4>
+        <div class="filter-options">
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="tecnologia">
+            <span class="checkmark"></span>
+            Tecnologia
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="educacao">
+            <span class="checkmark"></span>
+            Educação
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="industria">
+            <span class="checkmark"></span>
+            Indústria
+          </label>
+          <label class="filter-option">
+            <input type="checkbox" checked data-area="servicos">
+            <span class="checkmark"></span>
+            Serviços
+          </label>
+        </div>
+      </div>
+
+      <button class="add-point-button" id="addPointBtn">
+        <i class="fas fa-plus"></i> Adicionar Ponto
+      </button>
+    </aside>
+
+    <!-- Map Visualization -->
+    <div class="map-visualization">
+      <div id="map"></div>
+      <div class="map-legend">
+        <div class="legend-item"><span class="legend-color startup"></span> Startups</div>
+        <div class="legend-item"><span class="legend-color company"></span> Empresas</div>
+        <div class="legend-item"><span class="legend-color university"></span> Universidades</div>
+        <div class="legend-item"><span class="legend-color government"></span> Governo</div>
+        <div class="legend-item"><span class="legend-color event"></span> Eventos</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Point Modal -->
+  <div class="modal" id="addPointModal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h3>Adicionar Novo Ponto</h3>
+      
+      <form id="addPointForm">
+        <div class="form-group">
+          <label for="pointName">Nome do Local/Organização</label>
+          <input type="text" id="pointName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="pointCategory">Categoria</label>
+          <select id="pointCategory" required>
+            <option value="">Selecione...</option>
+            <option value="startup">Startup</option>
+            <option value="empresa">Empresa</option>
+            <option value="universidade">Universidade</option>
+            <option value="governo">Órgão Governamental</option>
+            <option value="evento">Evento</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="pointAddress">Endereço</label>
+          <input type="text" id="pointAddress" required>
+          <button type="button" id="searchAddress">Buscar no Mapa</button>
+        </div>
+
+        <div class="form-group">
+          <label for="pointDescription">Descrição</label>
+          <textarea id="pointDescription" rows="3"></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="pointWebsite">Website</label>
+          <input type="url" id="pointWebsite">
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="cancel-button">Cancelar</button>
+          <button type="submit" class="submit-button">Adicionar Ponto</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
