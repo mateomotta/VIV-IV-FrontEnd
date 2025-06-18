@@ -1,13 +1,13 @@
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
-
 @Component({
-  selector: 'app-root',
+  selector: 'app-lista-perfil',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule, RouterModule],
   templateUrl: './lista-perfil.html',
   styleUrls: ['./lista-perfil.css']
 })
@@ -17,7 +17,12 @@ export class ListaPerfilComponent {
     { nome: 'Empresa 2', descricao: 'Líder em soluções industriais', imagem: 'assets/images/empresa2.jpg', tipo: 'empresa', area: 'tecnologia' },
     { nome: 'Universidade X', descricao: 'Referência em educação', imagem: 'assets/images/universidade.jpg', tipo: 'universidade', area: 'educacao' },
     { nome: 'Startup 3', descricao: 'Transformando a mobilidade urbana', imagem: 'assets/images/startup3.jpg', tipo: 'startup', area: 'tecnologia' },
-    { nome: 'Instituto Y', descricao: 'Centro de pesquisa avançada', imagem: 'assets/images/instituto.jpg', tipo: 'universidade', area: 'educacao' }
+    { nome: 'Instituto Y', descricao: 'Centro de pesquisa avançada', imagem: 'assets/images/instituto.jpg', tipo: 'universidade', area: 'educacao' },
+    { nome: 'Joinvalle', descricao: 'Inovando e Empreendendo', imagem: '', tipo: 'startup', area: 'tecnologia' },
+    { nome: 'Tecfor', descricao: 'Líder em soluções industriais', imagem: '', tipo: 'empresa', area: 'tecnologia' },
+    { nome: 'Universidade Univille', descricao: 'Referência em educação', imagem: '', tipo: 'universidade', area: 'educacao' },
+    { nome: 'PowerHub', descricao: 'Monitorando o uso da Rede Elétrica', imagem: '', tipo: 'startup', area: 'tecnologia' },
+    { nome: 'UniSociesc', descricao: 'Centro de pesquisa avançada', imagem: '', tipo: 'universidade', area: 'educacao' }
   ];
 
   filtro = {
@@ -68,6 +73,3 @@ export class ListaPerfilComponent {
     this.aplicarPaginacao();
   }
 }
-
-
-

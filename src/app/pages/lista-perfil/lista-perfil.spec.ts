@@ -1,4 +1,3 @@
-// lista-perfil.spec.ts
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormsModule } from '@angular/forms';
 import { ListaPerfilComponent } from './lista-perfil';
@@ -46,4 +45,3 @@ describe('ListaPerfilComponent', () => {
     component.carregarMais();
     expect(component.perfisFiltrados.length).toBeGreaterThan(quantidadeAntes);
   });
-});
