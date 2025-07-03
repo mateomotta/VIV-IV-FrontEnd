@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+:root {
+  font-family: 'Montserrat', sans-serif;
+  --cor-azul-escuro: #374b53;
+  --cor-verde: #6d887d;
+  --cor-cinza-azulado: #6e848d;
+  --cor-branco: #ffffff;
+  --cor-cinza-claro: #f3f3f3;
+}
+
+body {
+  font-family: inherit;
+  margin: 0;
+  padding: 0;
+}

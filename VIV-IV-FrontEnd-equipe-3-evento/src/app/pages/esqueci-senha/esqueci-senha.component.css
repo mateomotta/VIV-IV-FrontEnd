@@ -1,0 +1,211 @@
+.esqueci-container {
+  display: flex;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  position: relative;
+  padding: 20px;
+}
+
+.esqueci-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('/assets/images/background-register.png') no-repeat center center;
+  background-size: cover;
+  transform: scale(1.05);
+  filter: blur(5px);
+  z-index: -1;
+}
+
+.esqueci-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: -1;
+}
+
+.esqueci-left {
+  display: none; /* Escondemos o lado esquerdo em mobile */
+}
+
+.esqueci-right {
+  background: #fff;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 1.5rem;
+  display: block; /* Mostramos o logo no mobile */
+}
+
+.esqueci-right h2 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+form {
+  width: 100%;
+  max-width: 340px;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.3rem;
+  font-size: 0.95rem;
+}
+
+input[type="email"] {
+  width: 100%;
+  padding: 0.6rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+  background: #f3f3f3;
+  font-size: 1rem;
+}
+
+.error small {
+  color: #d32f2f;
+  font-size: 0.8rem;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 0.8rem;
+  background: #374b53;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.back-link {
+  text-align: center;
+  margin-top: 1.2rem;
+}
+
+.back-link a {
+  color: #6d887d;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* Media queries para tablets e desktops */
+@media (min-width: 768px) {
+  .esqueci-container {
+    padding: 0;
+  }
+  
+  .esqueci-left {
+    display: flex;
+    flex: 1;
+    background: #374b53;
+    color: #fff;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 16px 0 0 16px;
+    height: 460px;
+    min-width: 320px;
+    max-width: 400px;
+    padding: 40px 20px;
+  }
+  
+  .esqueci-right {
+    flex: 1.2;
+    border-radius: 0 16px 16px 0;
+    height: 460px;
+    min-width: 350px;
+    max-width: 480px;
+    padding: 40px 32px;
+    box-shadow: none;
+  }
+  
+  .logo {
+    width: 300px;
+    margin-bottom: 2rem;
+  }
+  
+  .esqueci-right h2 {
+    font-size: 2rem;
+    text-align: left;
+  }
+  
+  .subtitle {
+    font-size: 0.95rem;
+    color: #b8e0d2;
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+  
+  button[type="submit"] {
+    font-size: 1.1rem;
+    margin-top: 1.2rem;
+  }
+}
+
+/* Ajustes para telas muito pequenas */
+@media (max-width: 400px) {
+  .esqueci-right {
+    padding: 25px 15px;
+  }
+  
+  .logo {
+    width: 180px;
+  }
+  
+  .esqueci-right h2 {
+    font-size: 1.3rem;
+  }
+  
+  .subtitle {
+    font-size: 0.85rem;
+    margin-bottom: 1.2rem;
+  }
+  
+  button[type="submit"] {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+  
+  .back-link a {
+    font-size: 0.85rem;
+  }
+}
