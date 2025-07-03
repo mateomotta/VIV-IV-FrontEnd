@@ -1,0 +1,3 @@
+<div *ngFor="let event of events" [style.color]="getStatusColor(event.status)">
+  {{ event.date }} - {{ event.title }} - Status: {{ event.status }}
+</div>

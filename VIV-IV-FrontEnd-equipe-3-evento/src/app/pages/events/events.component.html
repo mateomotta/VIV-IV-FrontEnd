@@ -1,0 +1,22 @@
+<app-event-filters (filterChanged)="onFilterChanged($event)"></app-event-filters>
+
+<div class="view-toggle">
+  <button 
+    (click)="switchView('list')" 
+    [class.active]="viewMode === 'list'">
+    Visualizar Lista
+  </button>
+  <button 
+    (click)="switchView('calendar')" 
+    [class.active]="viewMode === 'calendar'">
+    Visualizar Calendário
+  </button>
+</div>
+
+<div *ngIf="viewMode === 'list'">
+  <app-event-list [filter]="filterText"></app-event-list>
+</div>
+
+<div *ngIf="viewMode === 'calendar'">
+  <app-event-calendar></app-event-calendar>
+</div>
